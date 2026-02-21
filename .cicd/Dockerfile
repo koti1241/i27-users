@@ -12,7 +12,7 @@ WORKDIR /opt/i27/
 # Define a build time variable called JAR_SOURCE to specify the path format
 ARG JAR_SOURCE
 
-COPY ["${JAR_SOURCE}", "/opt/i27/i27-users.jar"]
+COPY ["${JAR_SOURCE}", "/opt/i27/i27-user.jar"]
 
 # Grant permissions to the Workdir 
 RUN chmod 777 /opt/i27/
@@ -22,4 +22,4 @@ RUN chmod 777 /opt/i27/
 EXPOSE 8232
 
 # Run the process in the background 
-CMD ["java", "-jar", "/opt/i27/i27-users.jar"]
+CMD ["java", "-jar", "/opt/i27/i27-user.jar"]
