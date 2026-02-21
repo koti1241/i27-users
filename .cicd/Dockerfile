@@ -1,7 +1,7 @@
 # Instructions
 
 # This is the official image as a base
-FROM openjdk:18
+FROM eclipse-temurin:17
 
 # Create a directory called /opt/i27  in which we store our artifacts or other read only data.
 RUN mkdir -p /opt/i27/
