@@ -1,0 +1,34 @@
+# Deployment file for user 
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: i27-user-prd
+  labels:
+    app: i27-user-prd
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: i27-user-prd
+  template:
+    metadata:
+      labels:
+        app: i27-user-prd
+    spec:
+      containers:
+      - name: i27-user-prd
+        image: DIT # Image tag will be replaced by shared library
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: i27-user-prd
+  labels:
+    app: i27-user-prd
+spec:
+  type: NodePort
+  ports:
+  - port: 8232
+    targetPort: 8232
+  selector:
+    app: i27-user-prd 
