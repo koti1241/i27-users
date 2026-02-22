@@ -12,7 +12,7 @@ WORKDIR /opt/i27
 # Define a build time variable called JAR_SOURCE to specify the path format
 ARG Jar_Source
 
-COPY ["${JAR_SOURCE}", "/opt/i27/i27-user.jar"]
+COPY ["${Jar_Source}", "/opt/i27/i27-user.jar"]
 
 # Grant permissions to the Workdir 
 RUN chmod 777 /opt/i27/
