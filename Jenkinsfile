@@ -142,7 +142,7 @@ pipeline {
                    }
                }
            }
-        /*stage('BuildFormat'){
+        /stage('BuildFormat'){
             steps{
                 script{
                     //existing:i27-eureka-0.0.1-SNAPSHOT.jar
@@ -154,7 +154,7 @@ pipeline {
                     """
                 }
             }
-        }*/
+        }
         stage('DockerBuild'){
             when{
                 anyOf{
